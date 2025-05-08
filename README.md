@@ -1,54 +1,114 @@
-# React + TypeScript + Vite
+# 🚀 Real-Time Crypto Price Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive real-time cryptocurrency price tracker built with **React**, **Redux Toolkit**, **TypeScript**, and **Recharts**. This app simulates live crypto price updates and manages all state via Redux.
 
-Currently, two official plugins are available:
+## 📋 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* Real-time price updates (simulated using `setInterval`)
+* Color-coded price changes (green for positive, red for negative)
+* Responsive table layout
+* 7-day historical price chart for each asset
+* Clean and modern UI
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+* **React** - UI components
+* **Redux Toolkit** - State management
+* **TypeScript** - Static typing
+* **Recharts** - Data visualization for 7-day charts
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 🗂️ Project Structure
+
+```
+src/
+├── components/
+│   ├── CryptoTable.tsx
+│   ├── CryptoRow.tsx
+│   └── SevenDayChart.tsx
+│
+├── redux/
+│   ├── store.ts
+│   └── cryptoSlice.ts
+│
+├── App.tsx
+├── index.tsx
+├── styles.css
+└── types/
+    └── crypto.d.ts
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🧑‍💻 Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Prerequisites
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+Ensure you have **Node.js** installed. You can check your Node.js version with:
+
 ```
+node -v
+```
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/your-username/crypto-price-tracker.git
+cd crypto-price-tracker
+```
+
+2. Install the dependencies:
+
+```bash
+npm install
+```
+
+3. Start the development server:
+
+```bash
+npm start
+```
+
+### Building for Production
+
+To build the project for production:
+
+```bash
+npm run build
+```
+
+## 🚀 Usage
+
+Once the project is running, the app will display a real-time table of cryptocurrency prices, with simulated price updates every 1-2 seconds.
+
+## 📝 File Descriptions
+
+* **App.tsx** - Main application component.
+* **CryptoTable.tsx** - Renders the main crypto data table.
+* **CryptoRow\.tsx** - Renders individual rows for each crypto asset.
+* **SevenDayChart.tsx** - Displays a 7-day line chart for each asset.
+* **cryptoSlice.ts** - Redux slice for managing crypto state.
+* **store.ts** - Configures the Redux store.
+* **crypto.d.ts** - TypeScript type definitions for crypto assets.
+
+## 📊 Future Enhancements
+
+* Integrate real-time WebSocket data from Binance API
+* Add filtering and sorting options
+* Dark mode toggle
+* Unit tests for reducers and selectors
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to submit a pull request or open an issue.
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 📧 Contact
+
+For support or questions, please reach out via [your-email@example.com](mailto:your-email@example.com) or create an issue in this repository.
+
+---
+
+Made with ❤️ by \[Your Name]
